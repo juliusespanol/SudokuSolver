@@ -1,6 +1,22 @@
 # SudokuSolver
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.8.
+This project is an Angular application that solves Sudoku puzzles. The solver uses a backtracking algorithm to find the solution.
+
+## Setup
+
+To run the application, clone the repository and install the dependencies using `npm install`. Then, start the development server using `ng serve`. Navigate to `http://localhost:4200/` in your web browser to view the application.
+
+## Difficulty Levels
+
+The application has three difficulty levels: easy, medium, and hard. To change the difficulty level, select the desired option from the dropdown menu.
+
+## Algorithm
+
+The solver uses a backtracking algorithm to find the solution to the Sudoku puzzle. Backtracking is a type of brute-force algorithm that incrementally builds solutions and discards them when they are found to be invalid.
+
+The algorithm works by placing a number in an empty cell and checking if it violates any of the Sudoku rules. If the number is valid, the algorithm moves on to the next empty cell and repeats the process. If the number is invalid, the algorithm backtracks to the previous cell and tries a different number.
+
+The algorithm continues until a solution is found or all possible combinations have been tried.
 
 ## Development server
 

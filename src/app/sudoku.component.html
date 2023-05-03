@@ -1,0 +1,26 @@
+<div class="sudoku-grid">
+    <div class="sudoku-row" *ngFor="let row of sudokuGrid">
+      <ng-container *ngFor="let cell of row">
+        <div class="sudoku-cell" [ngClass]="{ 'readonly': !!cell }">
+            <ng-container *ngIf="!cell; else readonly">
+              <input [(ngModel)]="sudokuGrid[rowIndex(row)][colIndex(row, cell)]" (input)="validateInput(rowIndex(row), colIndex(row, cell))" type="number" min="1" max="9">
+            </ng-container>
+            <ng-template #readonly>
+              {{ cell }}
+            </ng-template>
+          </div>          
+      </ng-container>
+    </div>
+  </div>
+  
+  <div class="sudoku-controls">
+    <label for="difficulty">Difficulty:</label>
+    <select id="difficulty" [(ngModel)]="selectedDifficulty">
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+    <button (click)="generate()">Generate</button>
+    <button (click)="solve()">Solve</button>
+  </div>
+  
